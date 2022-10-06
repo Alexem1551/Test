@@ -5,22 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Height="450">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <ListView x:Name="ListViewMain" d:ItemsSource="{d:SampleData}" Margin="115,64,115,64" Grid.ColumnSpan="2" >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding rank_}"  Width="50px" >#</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding name_}" Width="100px" >Coin</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding symbol_}" Width="70px" >#</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding priceUsd_}" Width="150px" >Price</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding changePercent24Hr_}" Width="150px" >24hr change</GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
-    </Grid>
-</Window>
+        WindowStyle = "None"
+       
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+         
+        Title="Coin" Height="600" Width="920">
+
+
+    <Border Background="#272537" CornerRadius="30">
+
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Coin" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="35"/>
+
+
+            <Button Content="Button" Foreground="White" FontSize="18" Background="#272537"  BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="60"  Grid.Row="1"/>
+            <Button Content="Button" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,60,0,0"/>
+            <Button Content="Button" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,120,0,0"/>
+            <Button Content="Button" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,180,0,0"/>
+            <Button Content="Button" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,240,0,0"/>
+
+            <ListView x:Name="ListViewMain" d:ItemsSource="{d:SampleData}" Margin="35,27,35,26" Grid.Column="1" Grid.Row="1" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding rank_}"  Width="50px" >#</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding name_}" Width="100px" >Coin</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding symbol_}" Width="70px" >#</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding priceUsd_}" Width="150px" >Price</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding changePercent24Hr_}" Width="150px" >24hr change</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </Grid>
+    </Border>
+
+
+</Window> 

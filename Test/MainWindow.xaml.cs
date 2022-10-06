@@ -56,9 +56,7 @@ namespace Test
         public class Coin
         {
             public string rank_ { get; set; }
-
             public string name_ { get; set; }
-
             public string symbol_ { get; set; }
             public string priceUsd_ { get; set; }
             public string changePercent24Hr_ { get; set; }
