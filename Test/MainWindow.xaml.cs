@@ -1,65 +1,85 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Markup;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Xml.Linq;
 
 namespace Test
 {
-    
+
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            var reqest = new GetRequest("https://api.coincap.io/v2/assets");
-            reqest.Run();
+            string link = "https://api.coincap.io/v2/assets";
 
-            var response = reqest.Response;
+            var reqest = new GetRequest(link);
+            
+                reqest.Run();
+                var response = reqest.Response;
 
-            var json = JObject.Parse(response);
-            var value = json["data"];
+                var json = JObject.Parse(response);
+                var value = json["data"];
 
+                foreach (var item in value)
+                {
+                    var rank = item["rank"];
+                    var name = item["name"];
+                    var symbol = item["symbol"];
+                    var priceUsd = item["priceUsd"];
+                    var changePercent24Hr = item["changePercent24Hr"];
 
-            /*for (int i = 0; i < 15; i++)
-            {
-                var data = Convert.ToString(value[i]);
-              
-                ListViewMain.Items.Add(data);
-             }*/
-
-            foreach (var item in value)
-            {
-                var rank = item["rank"];
-                var name = item["name"];
-                var symbol = item["symbol"];
-                var priceUsd = item["priceUsd"];
-                var changePercent24Hr = item["changePercent24Hr"];
-                
-                ListViewMain.Items.Add(new Coin {rank_= Convert.ToString(rank), name_= Convert.ToString(name), symbol_= Convert.ToString(symbol),priceUsd_ = Convert.ToString(priceUsd),changePercent24Hr_ = Convert.ToString(changePercent24Hr)});
-            }
-             
+                    ListViewMain.Items.Add(new Coin { rank_ = Convert.ToString(rank), name_ = Convert.ToString(name), symbol_ = Convert.ToString(symbol), priceUsd_ = Convert.ToString(priceUsd), changePercent24Hr_ = Convert.ToString(changePercent24Hr) });
+                }
         }
-        public class Coin
+        private void Button_BTK_Click(object sender, RoutedEventArgs e)
         {
-            public string rank_ { get; set; }
-            public string name_ { get; set; }
-            public string symbol_ { get; set; }
-            public string priceUsd_ { get; set; }
-            public string changePercent24Hr_ { get; set; }
+            Coin_Market newForm = new Coin_Market();
+            newForm.Show();
+        }
+        private void Button_ETH_Click(object sender, RoutedEventArgs e)
+        {
+            Coin_Market newForm = new Coin_Market();
+            newForm.Show();
+        }
+
+        private void Button_TTH_Click(object sender, RoutedEventArgs e)
+        {
+            Coin_Market newForm = new Coin_Market();
+            newForm.Show();
+        }
+
+        private void Button_BNB_Click(object sender, RoutedEventArgs e)
+        {
+            Coin_Market newForm = new Coin_Market();
+            newForm.Show();
+        }
+
+        private void Button_USDCoin_Click(object sender, RoutedEventArgs e)
+        {
+            Coin_Market newForm = new Coin_Market();
+            newForm.Show();
+        }
+
+        private void TextBox_Show_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                string value = TextBox_Show.Text;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();   
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
-}
+
+       
+    }

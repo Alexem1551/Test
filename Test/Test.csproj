@@ -8,7 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail-removebg-preview.png" />
+    <None Remove="png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail-removebg-preview.png" />
+    <Resource Include="png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail.png" />
   </ItemGroup>
 
 </Project>

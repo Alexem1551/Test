@@ -5,19 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test"
         mc:Ignorable="d"
+        
         WindowStyle = "None"
-       
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
          
-        Title="Coin" Height="600" Width="920">
+        Title="Coin" Height="600" Width="920" MouseLeftButtonDown="Window_MouseLeftButtonDown" WindowStartupLocation="CenterScreen">
 
 
     <Border Background="#272537" CornerRadius="30">
 
 
         <Grid >
+            <Grid.Background>
+                <ImageBrush/>
+            </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
@@ -28,23 +31,29 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
+
             <TextBlock Text="Coin" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="35"/>
+            <Button Grid.Column="1"  Height="35" Width="35" BorderThickness="0"  Margin="0,0,30,0" HorizontalAlignment="Right" Click="Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail-removebg-preview.png"/>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="TextBox_Show" Grid.Column="1" Margin="15,15,0,15" Height="45" Width="250" HorizontalAlignment="Left"  BorderThickness="0,0,0,0" Style="{StaticResource ModernTextBox}" KeyDown="TextBox_Show_KeyDown"/>
 
+            <Button x:Name="Button_BTK" Content="Bitcoin" Foreground="White" FontSize="18" Background="#272537"  BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="60"  Grid.Row="1" Click="Button_BTK_Click"/>
+            <Button x:Name="Button_ETH" Content="Ethernum" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,60,0,0" Click="Button_ETH_Click"/>
+            <Button x:Name="Button_TTH" Content="Tather" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,120,0,0" Click="Button_TTH_Click"/>
+            <Button x:Name="Button_BNB" Content="BNB" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,180,0,0" Click="Button_BNB_Click"/>
+            <Button x:Name="Button_USDCoin" Content="USD Coin" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,240,0,0" Click="Button_USDCoin_Click"/>
 
-            <Button Content="Button" Foreground="White" FontSize="18" Background="#272537"  BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="60"  Grid.Row="1"/>
-            <Button Content="Button" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,60,0,0"/>
-            <Button Content="Button" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,120,0,0"/>
-            <Button Content="Button" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,180,0,0"/>
-            <Button Content="Button" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,240,0,0"/>
-
-            <ListView x:Name="ListViewMain" d:ItemsSource="{d:SampleData}" Margin="35,27,35,26" Grid.Column="1" Grid.Row="1" >
+            <ListView x:Name="ListViewMain" d:ItemsSource="{d:SampleData}" Margin="25,25,225,200" Grid.Column="1" Grid.Row="1" Height="300" Width="470" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding rank_}"  Width="50px" >#</GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding name_}" Width="100px" >Coin</GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding symbol_}" Width="70px" >#</GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding priceUsd_}" Width="150px" >Price</GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding changePercent24Hr_}" Width="150px" >24hr change</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding rank_}"  Width="30px" Header="#" />
+                        <GridViewColumn DisplayMemberBinding="{Binding name_}" Width="90px" Header="Coin" />
+                        <GridViewColumn DisplayMemberBinding="{Binding symbol_}" Width="50px" Header="#" />
+                        <GridViewColumn DisplayMemberBinding="{Binding priceUsd_}" Width="150px" Header="Price" />
+                        <GridViewColumn DisplayMemberBinding="{Binding changePercent24Hr_}" Width="150px" Header="24hr change" />
                     </GridView>
                 </ListView.View>
             </ListView>
