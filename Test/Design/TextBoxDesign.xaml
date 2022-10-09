@@ -4,23 +4,13 @@
         <Setter Property="Template">
            <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border CornerRadius="10" Background="#353340" Height="45" Width="250">
+                    <Border CornerRadius="10" Background="#353340" Height="30" Width="200">
                         <Grid>
                             <Rectangle StrokeThickness="1"/>
-                            <TextBox  Text="{TemplateBinding Text}" BorderThickness="0" Background="Transparent" VerticalAlignment="Center" Padding="10" Foreground="#CFCFCF" x:Name="SearchBox" FontSize="15"/>
-                            <TextBlock Text="Search" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15" Foreground="DarkGray" Grid.Column="1" Padding="10">
-                                
-                                <TextBlock.Style>
-                                    <Style TargetType="{x:Type TextBlock}">
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text, ElementName=SearchBox}" Value="">
-                                                <Setter Property="Visibility" Value="Visible"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </TextBlock.Style>
+                            <TextBox Margin="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{TemplateBinding Text}" BorderThickness="0" Background="Transparent" VerticalAlignment="Center" Padding="5" Foreground="#CFCFCF" x:Name="SearchBox"/>
+ 
 
-                            </TextBlock>
+                          
                         </Grid>
                 </Border>
                 </ControlTemplate>

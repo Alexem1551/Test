@@ -7,6 +7,10 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Design/TextBoxDesign.xaml"/>
+                <ResourceDictionary Source="Design/ButtonOFFdesign.xaml"/>
+                <ResourceDictionary Source="Design/ButtonCalc.xaml"/>
+               
+                
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

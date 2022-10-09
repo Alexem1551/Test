@@ -8,13 +8,16 @@
         
         WindowStyle = "None"
         ResizeMode="NoResize"
-        Background="Transparent"
         AllowsTransparency="True"
+        
          
-        Title="Coin" Height="600" Width="920" MouseLeftButtonDown="Window_MouseLeftButtonDown" WindowStartupLocation="CenterScreen">
+        Title="Coin" Height="600" Width="920" MouseLeftButtonDown="Window_MouseLeftButtonDown" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Window.Background>
+        <ImageBrush ImageSource="/calc.png"/>
+    </Window.Background>
 
 
-    <Border Background="#272537" CornerRadius="30">
+    <Border Background="#272537" CornerRadius="30" BorderBrush="White" BorderThickness="1">
 
 
         <Grid >
@@ -24,6 +27,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -33,12 +37,61 @@
 
 
             <TextBlock Text="Coin" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="35"/>
-            <Button Grid.Column="1"  Height="35" Width="35" BorderThickness="0"  Margin="0,0,30,0" HorizontalAlignment="Right" Click="Button_Click">
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Width="50" BorderThickness="0"  Margin="110,40,40,510" HorizontalAlignment="Left" Click="Button_Click" RenderTransformOrigin="-0.363,0.483" Grid.RowSpan="2">
                 <Button.Background>
                     <ImageBrush ImageSource="/png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail-removebg-preview.png"/>
                 </Button.Background>
             </Button>
-            <TextBox x:Name="TextBox_Show" Grid.Column="1" Margin="15,15,0,15" Height="45" Width="250" HorizontalAlignment="Left"  BorderThickness="0,0,0,0" Style="{StaticResource ModernTextBox}" KeyDown="TextBox_Show_KeyDown"/>
+            <Button x:Name="ButtonWindowState" Style="{StaticResource MyButtonStyle}" Grid.Column="2" Content="" Margin="45,40,105,510" Click="ButtonWindowState_Click" RenderTransformOrigin="0.6,0.012" Grid.RowSpan="2">
+                <Button.Background>
+                    <ImageBrush ImageSource="/MINIMIZE-131994911324916820-removebg-preview.png"/>
+                </Button.Background>
+            </Button>
+
+            <ComboBox x:Name="ComboBox_Search" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="250" IsEditable="True" KeyDown="ComboBox_Search_KeyDown">
+           
+                <TextBlock>bitcoin</TextBlock>
+                <TextBlock>ethernum</TextBlock>
+                <TextBlock>tether</TextBlock>
+                <TextBlock>binance-coin</TextBlock>
+                <TextBlock>usd-coin</TextBlock>
+                <TextBlock>xrp</TextBlock>
+                <TextBlock>binance-usd</TextBlock>
+                <TextBlock>cardano</TextBlock>
+                <TextBlock>solana</TextBlock>
+                <TextBlock>terra-luna</TextBlock>
+                <TextBlock>dogecoin</TextBlock>
+                <TextBlock>polkadot</TextBlock>
+                <TextBlock>polygon</TextBlock>
+                <TextBlock>multi-collateral-dai</TextBlock>
+                <TextBlock>shiba-inu</TextBlock>
+                <TextBlock>tron</TextBlock>
+                <TextBlock>uniswap</TextBlock>
+                <TextBlock>avalanche</TextBlock>
+                <TextBlock>wrapped-bitcoin</TextBlock>
+                <TextBlock>unus-sed-leo</TextBlock>
+                <TextBlock>litecoin</TextBlock>
+                <TextBlock>ethereum-classic</TextBlock>
+                <TextBlock>chainlink</TextBlock>
+                <TextBlock>cosmos</TextBlock>
+                <TextBlock>ftx-token</TextBlock>
+                <TextBlock>stellar</TextBlock>
+                <TextBlock>near-protocol</TextBlock>
+                <TextBlock>monero</TextBlock>
+                <TextBlock>algorand</TextBlock>
+                <TextBlock>bitcoin-cash</TextBlock>
+                <TextBlock>bitcoin-bep2</TextBlock>
+                <TextBlock>quant</TextBlock>
+                <TextBlock>flow</TextBlock>
+                <TextBlock>vechain</TextBlock>
+                <TextBlock>filecoin</TextBlock>
+                <TextBlock>internet-computer</TextBlock>
+                <TextBlock>elrond-egld</TextBlock>
+                <TextBlock>chiliz</TextBlock>
+                <TextBlock>tezos</TextBlock>
+                <TextBlock>decentraland</TextBlock>
+                <TextBlock>the-sandbox</TextBlock>
+            </ComboBox>
 
             <Button x:Name="Button_BTK" Content="Bitcoin" Foreground="White" FontSize="18" Background="#272537"  BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="60"  Grid.Row="1" Click="Button_BTK_Click"/>
             <Button x:Name="Button_ETH" Content="Ethernum" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,60,0,0" Click="Button_ETH_Click"/>
@@ -46,17 +99,24 @@
             <Button x:Name="Button_BNB" Content="BNB" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,180,0,0" Click="Button_BNB_Click"/>
             <Button x:Name="Button_USDCoin" Content="USD Coin" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,240,0,0" Click="Button_USDCoin_Click"/>
 
-            <ListView x:Name="ListViewMain" d:ItemsSource="{d:SampleData}" Margin="25,25,225,200" Grid.Column="1" Grid.Row="1" Height="300" Width="470" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+            <ListView x:Name="ListViewMain" d:ItemsSource="{d:SampleData}" Margin="24,59,24,164" Grid.Column="1" Grid.Row="1" Height="300" Width="470" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="Azure" Background="#353340">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding rank_}"  Width="30px" Header="#" />
-                        <GridViewColumn DisplayMemberBinding="{Binding name_}" Width="90px" Header="Coin" />
-                        <GridViewColumn DisplayMemberBinding="{Binding symbol_}" Width="50px" Header="#" />
-                        <GridViewColumn DisplayMemberBinding="{Binding priceUsd_}" Width="150px" Header="Price" />
-                        <GridViewColumn DisplayMemberBinding="{Binding changePercent24Hr_}" Width="150px" Header="24hr change" />
+                        <GridViewColumn DisplayMemberBinding="{Binding rank}"  Width="30px" Header="#" />
+                        <GridViewColumn DisplayMemberBinding="{Binding name}" Width="90px" Header="Coin" />
+                        <GridViewColumn DisplayMemberBinding="{Binding symbol}" Width="50px" Header="#" />
+                        <GridViewColumn DisplayMemberBinding="{Binding priceUsd}" Width="150px" Header="Price" />
+                        <GridViewColumn DisplayMemberBinding="{Binding changePercent24Hr}" Width="150px" Header="24hr change" />
                     </GridView>
                 </ListView.View>
             </ListView>
+
+
+            <Button Grid.Column="2" Margin="110,435,40,40" Grid.Row="1" Style="{StaticResource MyButtonStyle}" BorderThickness="0" Click="Button_Click_1">
+                <Button.Background>
+                    <ImageBrush ImageSource="/calc.png"/>
+                </Button.Background>
+            </Button>
 
         </Grid>
     </Border>

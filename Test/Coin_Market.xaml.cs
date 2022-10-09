@@ -14,15 +14,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Test
 {
-    public partial class Coin_Market : Window
+    public partial class Coin_Market : Window 
     {
-        public Coin_Market()
+        private DispatcherTimer _timer = new DispatcherTimer();
+        public Coin_Market(string coin_name)
         {           
+
             InitializeComponent();
-            string coin_name = "bitcoin";
+
             var reqest = new GetRequest($"https://api.coincap.io/v2/assets/{coin_name}/markets");
 
             reqest.Run();
@@ -32,6 +35,8 @@ namespace Test
             var json = JObject.Parse(response);
             var value = json["data"];
 
+            TextSymbol.Text = Convert.ToString(coin_name);
+
             foreach (var item in value)
             {
                 var exchangeId = item["exchangeId"];
@@ -39,26 +44,25 @@ namespace Test
                 var volumeUsd24Hr = item["volumeUsd24Hr"];
                 var priceUsd = item["priceUsd"];
 
-                ListViewMain.Items.Add(new Coin_market { exchangeId_ = Convert.ToString(exchangeId), baseId_ = Convert.ToString(baseId), volumeUsd24Hr_ = Convert.ToString(volumeUsd24Hr), priceUsd_ = Convert.ToString(priceUsd)});
+                ListViewMain.Items.Add(new Coin_market { exchangeId = Convert.ToString(exchangeId), baseId = Convert.ToString(baseId), volumeUsd24Hr = Convert.ToString(volumeUsd24Hr), priceUsd = Convert.ToString(priceUsd) });
             }
-           
         }
-        private void TextBox_Show_KeyDown(object sender, KeyEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e) => this.Close();
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.DragMove();
+        
+        private void ComboBox_Search_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                Coin_Market newForm = new Coin_Market();
+                string user_request = ComboBox_Search.Text;
+                Coin_Market newForm = new Coin_Market(user_request);
                 newForm.Show();
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
-        }
+        private void Button_Click_1(object sender, RoutedEventArgs e) => this.WindowState = WindowState.Minimized;
+
+   
     }
 }

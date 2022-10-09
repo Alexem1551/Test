@@ -20,6 +20,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -28,22 +29,75 @@
             </Grid.RowDefinitions>
 
             <TextBlock Text="Coin" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="35"/>
-            <Button Grid.Column="1" Height="35" Width="35" BorderThickness="0" Background="#353340"  Margin="0,0,30,0" HorizontalAlignment="Right" Click="Button_Click"/>
-            <TextBox x:Name="TextBox_Show" Grid.Column="1" Margin="15,15,0,15" Height="45" Width="250" HorizontalAlignment="Left"  BorderThickness="0,0,0,0" Style="{StaticResource ModernTextBox}" KeyDown="TextBox_Show_KeyDown"/>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Width="50" BorderThickness="0"  Margin="110,40,0,510" HorizontalAlignment="Left" Click="Button_Click" RenderTransformOrigin="-0.363,0.483" Grid.RowSpan="2">
+                <Button.Background>
+                    <ImageBrush ImageSource="/png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail-removebg-preview.png"/>
+                </Button.Background>
+            </Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Content="" Margin="45,40,105,510" Click="Button_Click_1" RenderTransformOrigin="0.6,0.012" Grid.RowSpan="2">
+                <Button.Background>
+                    <ImageBrush ImageSource="/MINIMIZE-131994911324916820-removebg-preview.png"/>
+                </Button.Background>
+            </Button>
 
 
 
-
-            <ListView x:Name="ListViewMain" d:ItemsSource="{d:SampleData}" Margin="25,25,225,200" Grid.Column="1" Grid.Row="1" Width="470" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+            <ListView x:Name="ListViewMain" d:ItemsSource="{d:SampleData}" Margin="25,60,25,165" Grid.Column="1" Grid.Row="1" Height="300" Width="470" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="#353340" Foreground="White">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding exchangeId_}"  Width="100px" >Name of the exchange </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding baseId_}" Width="100px" >Coin</GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding volumeUsd24Hr}" Width="135px" >Volume USD 24Hr</GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding priceUsd_}" Width="135px" >Price</GridViewColumn>
-                        </GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding exchangeId}"  Width="90px" >Name exchange</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding baseId}" Width="70px" >Coin</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding volumeUsd24Hr}" Width="155px" >Volume USD 24Hr</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding priceUsd}" Width="155px" >Price</GridViewColumn>
+                    </GridView>
                 </ListView.View>
             </ListView>
+
+            <ComboBox  x:Name="ComboBox_Search" FontSize="20" Grid.Column="1"  VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="250" IsEditable="True" KeyDown="ComboBox_Search_KeyDown" HorizontalContentAlignment="Center">
+                <TextBlock>bitcoin</TextBlock>
+                <TextBlock>ethernum</TextBlock>
+                <TextBlock>tether</TextBlock>
+                <TextBlock>binance-coin</TextBlock>
+                <TextBlock>usd-coin</TextBlock>
+                <TextBlock>xrp</TextBlock>
+                <TextBlock>binance-usd</TextBlock>
+                <TextBlock>cardano</TextBlock>
+                <TextBlock>solana</TextBlock>
+                <TextBlock>terra-luna</TextBlock>
+                <TextBlock>dogecoin</TextBlock>
+                <TextBlock>polkadot</TextBlock>
+                <TextBlock>polygon</TextBlock>
+                <TextBlock>multi-collateral-dai</TextBlock>
+                <TextBlock>shiba-inu</TextBlock>
+                <TextBlock>tron</TextBlock>
+                <TextBlock>uniswap</TextBlock>
+                <TextBlock>avalanche</TextBlock>
+                <TextBlock>wrapped-bitcoin</TextBlock>
+                <TextBlock>unus-sed-leo</TextBlock>
+                <TextBlock>litecoin</TextBlock>
+                <TextBlock>ethereum-classic</TextBlock>
+                <TextBlock>chainlink</TextBlock>
+                <TextBlock>cosmos</TextBlock>
+                <TextBlock>ftx-token</TextBlock>
+                <TextBlock>stellar</TextBlock>
+                <TextBlock>near-protocol</TextBlock>
+                <TextBlock>monero</TextBlock>
+                <TextBlock>algorand</TextBlock>
+                <TextBlock>bitcoin-cash</TextBlock>
+                <TextBlock>bitcoin-bep2</TextBlock>
+                <TextBlock>quant</TextBlock>
+                <TextBlock>flow</TextBlock>
+                <TextBlock>vechain</TextBlock>
+                <TextBlock>filecoin</TextBlock>
+                <TextBlock>internet-computer</TextBlock>
+                <TextBlock>elrond-egld</TextBlock>
+                <TextBlock>chiliz</TextBlock>
+                <TextBlock>tezos</TextBlock>
+                <TextBlock>decentraland</TextBlock>
+                <TextBlock>the-sandbox</TextBlock>
+            </ComboBox>
+
+            <TextBlock Foreground="White" FontSize="30" x:Name="TextSymbol" Grid.Column="1" HorizontalAlignment="Center" Margin="0,15,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
         </Grid>
     </Border>

@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="calc.png" />
+    <None Remove="MINIMIZE-131994911324916820-removebg-preview.png" />
+    <None Remove="MINIMIZE-131994911324916820.png" />
     <None Remove="png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail-removebg-preview.png" />
     <None Remove="png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail.png" />
   </ItemGroup>
@@ -17,8 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="calc.png" />
+    <Resource Include="MINIMIZE-131994911324916820-removebg-preview.png" />
     <Resource Include="png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail-removebg-preview.png" />
-    <Resource Include="png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail.png" />
   </ItemGroup>
 
 </Project>

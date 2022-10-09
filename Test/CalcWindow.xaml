@@ -1,0 +1,140 @@
+﻿<Window x:Class="Test.CalcWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test"
+        
+        WindowStyle = "None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+         
+        Title="Coin" Height="600" Width="500" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown" >
+
+
+
+    <Border Background="#272537" CornerRadius="30" BorderBrush="White" BorderThickness="1">
+
+
+        <Grid >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <ComboBox x:Name="ComboBoxCalc1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" VerticalAlignment="Top" Height="30" IsEditable="True" Margin="25,171,25,0" Grid.Row="1">
+
+                <TextBlock>bitcoin</TextBlock>
+                <TextBlock>ethernum</TextBlock>
+                <TextBlock>tether</TextBlock>
+                <TextBlock>binance-coin</TextBlock>
+                <TextBlock>usd-coin</TextBlock>
+                <TextBlock>xrp</TextBlock>
+                <TextBlock>binance-usd</TextBlock>
+                <TextBlock>cardano</TextBlock>
+                <TextBlock>solana</TextBlock>
+                <TextBlock>terra-luna</TextBlock>
+                <TextBlock>dogecoin</TextBlock>
+                <TextBlock>polkadot</TextBlock>
+                <TextBlock>polygon</TextBlock>
+                <TextBlock>multi-collateral-dai</TextBlock>
+                <TextBlock>shiba-inu</TextBlock>
+                <TextBlock>tron</TextBlock>
+                <TextBlock>uniswap</TextBlock>
+                <TextBlock>avalanche</TextBlock>
+                <TextBlock>wrapped-bitcoin</TextBlock>
+                <TextBlock>unus-sed-leo</TextBlock>
+                <TextBlock>litecoin</TextBlock>
+                <TextBlock>ethereum-classic</TextBlock>
+                <TextBlock>chainlink</TextBlock>
+                <TextBlock>cosmos</TextBlock>
+                <TextBlock>ftx-token</TextBlock>
+                <TextBlock>stellar</TextBlock>
+                <TextBlock>near-protocol</TextBlock>
+                <TextBlock>monero</TextBlock>
+                <TextBlock>algorand</TextBlock>
+                <TextBlock>bitcoin-cash</TextBlock>
+                <TextBlock>bitcoin-bep2</TextBlock>
+                <TextBlock>quant</TextBlock>
+                <TextBlock>flow</TextBlock>
+                <TextBlock>vechain</TextBlock>
+                <TextBlock>filecoin</TextBlock>
+                <TextBlock>internet-computer</TextBlock>
+                <TextBlock>elrond-egld</TextBlock>
+                <TextBlock>chiliz</TextBlock>
+                <TextBlock>tezos</TextBlock>
+                <TextBlock>decentraland</TextBlock>
+                <TextBlock>the-sandbox</TextBlock>
+            </ComboBox>
+
+            <ComboBox  x:Name="ComboBoxCalc2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" VerticalAlignment="Top" Height="30" IsEditable="True" Margin="25,171,25,0" Grid.Row="1" Grid.Column="1">
+
+                <TextBlock>bitcoin</TextBlock>
+                <TextBlock>ethernum</TextBlock>
+                <TextBlock>tether</TextBlock>
+                <TextBlock>binance-coin</TextBlock>
+                <TextBlock>usd-coin</TextBlock>
+                <TextBlock>xrp</TextBlock>
+                <TextBlock>binance-usd</TextBlock>
+                <TextBlock>cardano</TextBlock>
+                <TextBlock>solana</TextBlock>
+                <TextBlock>terra-luna</TextBlock>
+                <TextBlock>dogecoin</TextBlock>
+                <TextBlock>polkadot</TextBlock>
+                <TextBlock>polygon</TextBlock>
+                <TextBlock>multi-collateral-dai</TextBlock>
+                <TextBlock>shiba-inu</TextBlock>
+                <TextBlock>tron</TextBlock>
+                <TextBlock>uniswap</TextBlock>
+                <TextBlock>avalanche</TextBlock>
+                <TextBlock>wrapped-bitcoin</TextBlock>
+                <TextBlock>unus-sed-leo</TextBlock>
+                <TextBlock>litecoin</TextBlock>
+                <TextBlock>ethereum-classic</TextBlock>
+                <TextBlock>chainlink</TextBlock>
+                <TextBlock>cosmos</TextBlock>
+                <TextBlock>ftx-token</TextBlock>
+                <TextBlock>stellar</TextBlock>
+                <TextBlock>near-protocol</TextBlock>
+                <TextBlock>monero</TextBlock>
+                <TextBlock>algorand</TextBlock>
+                <TextBlock>bitcoin-cash</TextBlock>
+                <TextBlock>bitcoin-bep2</TextBlock>
+                <TextBlock>quant</TextBlock>
+                <TextBlock>flow</TextBlock>
+                <TextBlock>vechain</TextBlock>
+                <TextBlock>filecoin</TextBlock>
+                <TextBlock>internet-computer</TextBlock>
+                <TextBlock>elrond-egld</TextBlock>
+                <TextBlock>chiliz</TextBlock>
+                <TextBlock>tezos</TextBlock>
+                <TextBlock>decentraland</TextBlock>
+                <TextBlock>the-sandbox</TextBlock>
+            </ComboBox>
+            <Button x:Name="ButtonCalc" Content="Calculate" Foreground="White" FontSize="22" Style="{StaticResource ButtonCalc}" Margin="160,352,160,0" Grid.Row="1" VerticalAlignment="Top" Height="40" Grid.ColumnSpan="2" Click="ButtonCalc_Click"/>
+            <Label x:Name="Label1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontSize="15" Content="" Margin="40,65,55,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <Label x:Name="Label2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontSize="15" Content="" Margin="55,65,45,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1"/>
+            <Label x:Name="Label3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontSize="15" Content="" Margin="195,65,195,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" BorderThickness="0"  Margin="160,40,40,10" Click="Button_Click" RenderTransformOrigin="-0.363,0.483">
+                <Button.Background>
+                    <ImageBrush ImageSource="/png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail-removebg-preview.png"/>
+                </Button.Background>
+            </Button>
+            <Button Height="50" Style="{StaticResource MyButtonStyle}" Grid.Column="1" Content="" Margin="95,40,105,0" VerticalAlignment="Top" Click="Button_Click_1" RenderTransformOrigin="0.6,0.012">
+                <Button.Background>
+                    <ImageBrush ImageSource="/MINIMIZE-131994911324916820-removebg-preview.png"/>
+                </Button.Background>
+            </Button>
+
+
+        </Grid>
+    </Border>
+</Window>

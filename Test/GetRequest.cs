@@ -11,52 +11,50 @@ namespace Test
 {
     public class GetRequest
     {
-        HttpWebRequest _request;
-        string _address;
+        HttpWebRequest request;
+        string address;
 
         public string Response { get; set; }
-        public GetRequest(string address)
+        public GetRequest(string link)
         {
-            _address = address;
+            address = link;
         }
-
         public void Run()
         {
-            _request = (HttpWebRequest)WebRequest.Create(_address);
-           
-            _request.Method = "Get";
+            request = (HttpWebRequest)WebRequest.Create(address);
+            request.Method = "Get";
 
             try
             {
-                HttpWebResponse response = (HttpWebResponse)_request.GetResponse();
-               
-                var stream = response.GetResponseStream();
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+             
+                 var stream = response.GetResponseStream();
                 if (stream != null) Response = new StreamReader(stream).ReadToEnd();
             }
             catch (Exception)
-            {
-
+            { 
                 throw;
             }
-
-
         }
     }
 
     public class Coin
     {
-        public string rank_ { get; set; }
-        public string name_ { get; set; }
-        public string symbol_ { get; set; }
-        public string priceUsd_ { get; set; }
-        public string changePercent24Hr_ { get; set; }
+        public string rank { get; set; }
+        public string name { get; set; }
+        public string symbol { get; set; }
+        public string priceUsd { get; set; }
+        public string changePercent24Hr { get; set; }
     }
-
     public class Coin_market
     {
-        public string exchangeId_ { get; set; }
-        public string baseId_ { get; set; }
-        public string volumeUsd24Hr_ { get; set; }
-        public string priceUsd_ { get; set; }
+        public string exchangeId { get; set; }
+        public string baseId { get; set; }
+        public string volumeUsd24Hr { get; set; }
+        public string priceUsd { get; set; }
     }
+
+
+
+
 }
