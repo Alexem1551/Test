@@ -16,20 +16,15 @@ using System.Windows.Shapes;
 
 namespace Test
 {
-    /// <summary>
-    /// Логика взаимодействия для CalcWindow.xaml
-    /// </summary>
     public partial class CalcWindow : Window
     {
         public CalcWindow()
         {
             InitializeComponent();
-
         }
-
-
         private void ButtonCalc_Click(object sender, RoutedEventArgs e)
         {
+            Label4.Visibility = Visibility.Hidden;
             string link = "https://api.coincap.io/v2/assets";
             var request = new GetRequest(link);
 
@@ -41,7 +36,7 @@ namespace Test
 
             string First_currency = ComboBoxCalc1.Text;
             string Second_currency = ComboBoxCalc2.Text;
-            double priceFirst_currency = 0 , priceSecond_currency = 0 , price;
+            double priceFirst_currency = 0, priceSecond_currency = 0, price;
             bool one = false, two = false;
 
             foreach (var item in value)
@@ -67,13 +62,9 @@ namespace Test
 
             price = (priceFirst_currency / priceSecond_currency);
             Label3.Content = (price);
-
         }
-
         private void Button_Click(object sender, RoutedEventArgs e) => this.Close();
-
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.DragMove();
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;

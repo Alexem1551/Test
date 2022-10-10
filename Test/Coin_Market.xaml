@@ -10,10 +10,17 @@
         ResizeMode="NoResize"
         Background="Transparent"
          AllowsTransparency="True"
-        Title="Coin" Height="600" Width="920" MouseLeftButtonDown="Window_MouseLeftButtonDown" WindowStartupLocation="CenterScreen">
+        Title="Coin" 
+        Height="600"
+        Width="920"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown" 
+        WindowStartupLocation="CenterScreen" Icon="/icons8-dollar-coin-64-removebg-preview.png">
 
 
-    <Border Background="#272537" CornerRadius="30">
+    <Border Background="#272537"
+            CornerRadius="30" 
+            BorderBrush="White"
+            BorderThickness="1">
 
 
         <Grid >
@@ -28,13 +35,33 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Coin" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="35"/>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Width="50" BorderThickness="0"  Margin="110,40,0,510" HorizontalAlignment="Left" Click="Button_Click" RenderTransformOrigin="-0.363,0.483" Grid.RowSpan="2">
+            <TextBlock Text="Coin" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       Foreground="White" FontSize="35"/>
+            <Button ToolTip="Click to close"
+                    Style="{StaticResource MyButtonStyle}"
+                    Grid.Column="2"
+                    Width="50"
+                    BorderThickness="0" 
+                    Margin="110,40,0,510"
+                    HorizontalAlignment="Left"
+                    Click="Button_Click" 
+                    RenderTransformOrigin="-0.363,0.483" 
+                    Grid.RowSpan="2">
                 <Button.Background>
                     <ImageBrush ImageSource="/png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail-removebg-preview.png"/>
                 </Button.Background>
             </Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Content="" Margin="45,40,105,510" Click="Button_Click_1" RenderTransformOrigin="0.6,0.012" Grid.RowSpan="2">
+            
+            <Button ToolTip="Click to collapse"
+                    Style="{StaticResource MyButtonStyle}"
+                    Grid.Column="2"
+                    Content="" 
+                    Margin="45,40,105,510" 
+                    Click="Button_Click_1" 
+                    RenderTransformOrigin="0.6,0.012" 
+                    Grid.RowSpan="2">
                 <Button.Background>
                     <ImageBrush ImageSource="/MINIMIZE-131994911324916820-removebg-preview.png"/>
                 </Button.Background>
@@ -42,7 +69,16 @@
 
 
 
-            <ListView x:Name="ListViewMain" d:ItemsSource="{d:SampleData}" Margin="25,60,25,165" Grid.Column="1" Grid.Row="1" Height="300" Width="470" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="#353340" Foreground="White">
+            <ListView x:Name="ListViewMain"
+                      d:ItemsSource="{d:SampleData}" 
+                      Margin="25,60,25,165"
+                      Grid.Column="1"
+                      Grid.Row="1" 
+                      Height="300"
+                      Width="470" 
+                      ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden" 
+                      Background="#353340" Foreground="White">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding exchangeId}"  Width="90px" >Name exchange</GridViewColumn>
@@ -53,7 +89,19 @@
                 </ListView.View>
             </ListView>
 
-            <ComboBox  x:Name="ComboBox_Search" FontSize="20" Grid.Column="1"  VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="250" IsEditable="True" KeyDown="ComboBox_Search_KeyDown" HorizontalContentAlignment="Center">
+            <ComboBox ToolTip="Click to open the page with currency information"
+                      x:Name="ComboBox_Search"
+                      FontSize="20" 
+                      Grid.Column="1" 
+                      VerticalContentAlignment="Center" 
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Height="45"
+                      Width="250"
+                      IsEditable="True" 
+                      KeyDown="ComboBox_Search_KeyDown"
+                      HorizontalContentAlignment="Center">
+                
                 <TextBlock>bitcoin</TextBlock>
                 <TextBlock>ethernum</TextBlock>
                 <TextBlock>tether</TextBlock>
@@ -97,7 +145,15 @@
                 <TextBlock>the-sandbox</TextBlock>
             </ComboBox>
 
-            <TextBlock Foreground="White" FontSize="30" x:Name="TextSymbol" Grid.Column="1" HorizontalAlignment="Center" Margin="0,15,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBlock Foreground="White"
+                       FontSize="30"
+                       x:Name="TextSymbol"
+                       Grid.Column="1"
+                       HorizontalAlignment="Center"
+                       Margin="0,15,0,0" 
+                       Grid.Row="1" 
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Top"/>
 
         </Grid>
     </Border>

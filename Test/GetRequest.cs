@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Test
 {
@@ -31,8 +32,9 @@ namespace Test
                  var stream = response.GetResponseStream();
                 if (stream != null) Response = new StreamReader(stream).ReadToEnd();
             }
-            catch (Exception)
-            { 
+            catch (System.Net.WebException)
+            {
+                MessageBox.Show("Incorrect data entered!");
                 throw;
             }
         }

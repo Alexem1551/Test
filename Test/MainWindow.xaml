@@ -11,13 +11,23 @@
         AllowsTransparency="True"
         
          
-        Title="Coin" Height="600" Width="920" MouseLeftButtonDown="Window_MouseLeftButtonDown" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Coin" 
+        Height="600"
+        Width="920"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown" 
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        Icon="/icons8-dollar-coin-64-removebg-preview.png">
+    
     <Window.Background>
         <ImageBrush ImageSource="/calc.png"/>
     </Window.Background>
 
 
-    <Border Background="#272537" CornerRadius="30" BorderBrush="White" BorderThickness="1">
+    <Border Background="#272537" 
+            CornerRadius="30"
+            BorderBrush="White"
+            BorderThickness="1">
 
 
         <Grid >
@@ -36,20 +46,55 @@
             </Grid.RowDefinitions>
 
 
-            <TextBlock Text="Coin" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="35"/>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Width="50" BorderThickness="0"  Margin="110,40,40,510" HorizontalAlignment="Left" Click="Button_Click" RenderTransformOrigin="-0.363,0.483" Grid.RowSpan="2">
+            <TextBlock Text="Coin"
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       Foreground="White" FontSize="35"/>
+            
+            <Button ToolTip="Click to close"
+                    Style="{StaticResource MyButtonStyle}"
+                    Grid.Column="2" 
+                    Width="50" 
+                    BorderThickness="0" 
+                    Margin="110,40,40,510" 
+                    HorizontalAlignment="Left" 
+                    Click="Button_Click" 
+                    RenderTransformOrigin="-0.363,0.483"
+                    Grid.RowSpan="2">
+                
                 <Button.Background>
                     <ImageBrush ImageSource="/png-clipart-power-on-and-off-logo-red-power-button-electronics-power-buttons-thumbnail-removebg-preview.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="ButtonWindowState" Style="{StaticResource MyButtonStyle}" Grid.Column="2" Content="" Margin="45,40,105,510" Click="ButtonWindowState_Click" RenderTransformOrigin="0.6,0.012" Grid.RowSpan="2">
+            
+            <Button ToolTip="Click to collapse" 
+                    x:Name="ButtonWindowState" 
+                    Style="{StaticResource MyButtonStyle}"
+                    Grid.Column="2" 
+                    Content=""
+                    Margin="45,40,105,510"
+                    Click="ButtonWindowState_Click"
+                    RenderTransformOrigin="0.6,0.012"
+                    Grid.RowSpan="2">
+                
                 <Button.Background>
                     <ImageBrush ImageSource="/MINIMIZE-131994911324916820-removebg-preview.png"/>
                 </Button.Background>
             </Button>
 
-            <ComboBox x:Name="ComboBox_Search" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45" Width="250" IsEditable="True" KeyDown="ComboBox_Search_KeyDown">
-           
+            <ComboBox ToolTip="Click to open the page with currency information" 
+                      x:Name="ComboBox_Search"
+                      VerticalContentAlignment="Center" 
+                      HorizontalContentAlignment="Center"
+                      FontSize="20" 
+                      Grid.Column="1"
+                      HorizontalAlignment="Center" 
+                      VerticalAlignment="Center"
+                      Height="45"
+                      Width="250"
+                      IsEditable="True"
+                      KeyDown="ComboBox_Search_KeyDown">
+
                 <TextBlock>bitcoin</TextBlock>
                 <TextBlock>ethernum</TextBlock>
                 <TextBlock>tether</TextBlock>
@@ -93,13 +138,75 @@
                 <TextBlock>the-sandbox</TextBlock>
             </ComboBox>
 
-            <Button x:Name="Button_BTK" Content="Bitcoin" Foreground="White" FontSize="18" Background="#272537"  BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="60"  Grid.Row="1" Click="Button_BTK_Click"/>
-            <Button x:Name="Button_ETH" Content="Ethernum" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,60,0,0" Click="Button_ETH_Click"/>
-            <Button x:Name="Button_TTH" Content="Tather" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,120,0,0" Click="Button_TTH_Click"/>
-            <Button x:Name="Button_BNB" Content="BNB" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,180,0,0" Click="Button_BNB_Click"/>
-            <Button x:Name="Button_USDCoin" Content="USD Coin" Foreground="White" FontSize="18" Background="#272537" BorderThickness="0" VerticalAlignment="Top" Height="60"  Grid.Row="1" Margin="0,240,0,0" Click="Button_USDCoin_Click"/>
+            <Button x:Name="Button_BTK" 
+                    Content="Bitcoin" 
+                    Foreground="White"
+                    FontSize="18" Background="#272537" 
+                    BorderThickness="0"
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Top" Height="60" 
+                    Grid.Row="1" Click="Button_BTK_Click"/>
+            
+            <Button x:Name="Button_ETH" 
+                    Content="Ethernum" 
+                    Foreground="White" 
+                    FontSize="18"
+                    Background="#272537"
+                    BorderThickness="0"
+                    VerticalAlignment="Top"
+                    Height="60" 
+                    Grid.Row="1" 
+                    Margin="0,60,0,0"
+                    Click="Button_ETH_Click"/>
+            
+            <Button x:Name="Button_TTH" 
+                    Content="Tather" 
+                    Foreground="White"
+                    FontSize="18"
+                    Background="#272537"
+                    BorderThickness="0"
+                    VerticalAlignment="Top"
+                    Height="60" 
+                    Grid.Row="1" 
+                    Margin="0,120,0,0" 
+                    Click="Button_TTH_Click"/>
+            
+            <Button x:Name="Button_BNB"
+                    Content="BNB" 
+                    Foreground="White"
+                    FontSize="18" 
+                    Background="#272537"
+                    BorderThickness="0"
+                    VerticalAlignment="Top" 
+                    Height="60"  
+                    Grid.Row="1" 
+                    Margin="0,180,0,0"
+                    Click="Button_BNB_Click"/>
+            
+            <Button x:Name="Button_USDCoin" 
+                    Content="USD Coin"
+                    Foreground="White" 
+                    FontSize="18"
+                    Background="#272537"
+                    BorderThickness="0"
+                    VerticalAlignment="Top" 
+                    Height="60" 
+                    Grid.Row="1"
+                    Margin="0,240,0,0" 
+                    Click="Button_USDCoin_Click"/>
 
-            <ListView x:Name="ListViewMain" d:ItemsSource="{d:SampleData}" Margin="24,59,24,164" Grid.Column="1" Grid.Row="1" Height="300" Width="470" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="Azure" Background="#353340">
+            <ListView x:Name="ListViewMain"
+                      d:ItemsSource="{d:SampleData}" 
+                      Margin="24,59,24,164"
+                      Grid.Column="1"
+                      Grid.Row="1" 
+                      Height="300"
+                      Width="470" 
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden" 
+                      ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                      Foreground="White" 
+                      Background="#353340">
+                
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding rank}"  Width="30px" Header="#" />
@@ -112,7 +219,14 @@
             </ListView>
 
 
-            <Button Grid.Column="2" Margin="110,435,40,40" Grid.Row="1" Style="{StaticResource MyButtonStyle}" BorderThickness="0" Click="Button_Click_1">
+            <Button ToolTip="Сlick to open the currency converter" 
+                    Grid.Column="2" 
+                    Margin="110,435,40,40"
+                    Grid.Row="1"
+                    Style="{StaticResource MyButtonStyle}"
+                    BorderThickness="0" 
+                    Click="Button_Click_1">
+                
                 <Button.Background>
                     <ImageBrush ImageSource="/calc.png"/>
                 </Button.Background>

@@ -18,12 +18,11 @@ using System.Windows.Threading;
 
 namespace Test
 {
-    public partial class Coin_Market : Window 
+    public partial class Coin_Market : Window
     {
         private DispatcherTimer _timer = new DispatcherTimer();
         public Coin_Market(string coin_name)
-        {           
-
+        {
             InitializeComponent();
 
             var reqest = new GetRequest($"https://api.coincap.io/v2/assets/{coin_name}/markets");
@@ -44,13 +43,17 @@ namespace Test
                 var volumeUsd24Hr = item["volumeUsd24Hr"];
                 var priceUsd = item["priceUsd"];
 
-                ListViewMain.Items.Add(new Coin_market { exchangeId = Convert.ToString(exchangeId), baseId = Convert.ToString(baseId), volumeUsd24Hr = Convert.ToString(volumeUsd24Hr), priceUsd = Convert.ToString(priceUsd) });
+                ListViewMain.Items.Add(new Coin_market
+                {
+                    exchangeId = Convert.ToString(exchangeId),
+                    baseId = Convert.ToString(baseId),
+                    volumeUsd24Hr = Convert.ToString(volumeUsd24Hr),
+                    priceUsd = Convert.ToString(priceUsd)
+                });
             }
         }
-        private void Button_Click(object sender, RoutedEventArgs e) => this.Close();
-
+        private void Button_Click(object sender, RoutedEventArgs e) { this.Close(); }
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) => this.DragMove();
-        
         private void ComboBox_Search_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -60,9 +63,6 @@ namespace Test
                 newForm.Show();
             }
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e) => this.WindowState = WindowState.Minimized;
-
-   
     }
 }
